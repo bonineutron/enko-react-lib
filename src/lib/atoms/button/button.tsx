@@ -2,10 +2,15 @@ import React from 'react';
 
 export type ButtonProps = {
   label: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-export function Button({ label }: ButtonProps): JSX.Element {
-  return <button onClick={() => console.log('test')}>{label}</button>;
+export function Button({ label, onClick }: ButtonProps): JSX.Element {
+  return (
+    <button type='button' onClick={onClick}>
+      {label}
+    </button>
+  );
 }
 
 export default Button;
