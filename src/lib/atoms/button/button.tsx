@@ -7,7 +7,7 @@ export type ButtonProps = {
 
 export function Button({ label, onClick }: ButtonProps): JSX.Element {
   return (
-    <button type='button' onClick={onClick}>
+    <button type='button' onClick={onClick} className='bg-red-500'>
       {label}
     </button>
   );

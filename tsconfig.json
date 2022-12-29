@@ -18,5 +18,6 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
   },
+  // error: Default export of the module has or is using private name
   "exclude": ["node_modules", "dist", "**/*.stories.ts", "**/*.stories.js", "**/*.stories.jsx", "**/*.stories.tsx"]
 }
