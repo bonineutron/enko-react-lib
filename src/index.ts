@@ -1,3 +1,3 @@
-import './globals.css';
+import './globals.scss';
 
 export * from './lib/index';
