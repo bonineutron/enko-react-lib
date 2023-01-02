@@ -1,5 +1,4 @@
 import styles from './button.module.scss';
-import React from 'react';
 
 export type ButtonProps = {
   label: string;
