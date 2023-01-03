@@ -1,9 +1,16 @@
+import styles from './button.module.scss';
+
 export type ButtonProps = {
   label: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-export function Button({ label }: ButtonProps): JSX.Element {
-  return <button onClick={() => console.log('test')}>{label}</button>;
+export function Button({ label, onClick }: ButtonProps): JSX.Element {
+  return (
+    <button type='button' onClick={onClick} className={`${styles.button} p-10 text-white rounded-md`}>
+      {label}
+    </button>
+  );
 }
 
 export default Button;

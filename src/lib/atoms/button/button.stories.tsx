@@ -12,5 +12,6 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: 'Prueba Uno'
+  label: 'Prueba Uno',
+  onClick: () => console.log('test')
 } as ButtonProps;
