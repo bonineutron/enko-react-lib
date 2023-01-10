@@ -1,9 +1,11 @@
-import typescript from '@rollup/plugin-typescript';
-import css from 'rollup-plugin-import-css';
-import sass from 'rollup-plugin-sass';
+import typescript from 'rollup-plugin-typescript2';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
+import dts from 'rollup-plugin-dts';
 
 const packageJson = require('./package.json');
-const dts = require('rollup-plugin-dts');
 
 export default [
   {
@@ -20,12 +22,23 @@ export default [
         sourcemap: true
       }
     ],
-    plugins: [typescript({ tsconfig: './tsconfig.json' }), css(), sass()]
+    plugins: [
+      typescript(),
+      commonjs(),
+      resolve(),
+      terser(),
+      postcss({
+        autoModules: true,
+        config: {
+          path: './postcss.config.js'
+        }
+      })
+    ]
   },
   {
-    input: 'dist/esm/types/index.d.ts',
+    input: 'dist/src/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     external: [/\.css$/, /\.scss$/],
-    plugins: [dts.default()]
+    plugins: [dts()]
   }
 ];
