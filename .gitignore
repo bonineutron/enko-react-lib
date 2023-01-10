@@ -14,7 +14,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-tailwind.css
 
 # typescript
 *.tsbuildinfo
