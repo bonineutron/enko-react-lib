@@ -1,19 +1,22 @@
 {
   "name": "enko-react-lib",
-  "version": "0.0.1-beta",
+  "version": "0.0.35-beta",
   "description": "react library to enko",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.tsx",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "//": "New scripts to run and build Storybook with Tailwind",
-    "storybook": "concurrently \"yarn:watch:*\"",
-    "watch:css": "npx tailwindcss -i ./src/globals.scss -o ./public/tailwind.scss --watch",
-    "watch:storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "build": "yarn clean dist && rollup -c",
+    "clean": "rimraf dist"
   },
-  "keywords": [],
-  "author": "fundes",
+  "author": "andres bonilla",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.7",
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -24,12 +27,19 @@
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^17",
+    "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
-    "concurrently": "^7.6.0",
     "css-loader": "^5",
+    "postcss": "^8.4.21",
     "react": "^17",
     "react-dom": "^17",
-    "sass": "^1.57.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2",
+    "rollup-plugin-dts": "^5.1.0",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "sass": "1.43.2",
     "sass-loader": "^10",
     "style-loader": "^2",
     "tailwindcss": "^3.2.4",
@@ -39,5 +49,7 @@
     "react": "^17",
     "react-dom": "^17"
   },
-  "dependencies": {}
+  "files": [
+    "dist"
+  ]
 }

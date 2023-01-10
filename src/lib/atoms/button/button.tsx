@@ -12,5 +12,3 @@ export function Button({ label, onClick }: ButtonProps): JSX.Element {
     </button>
   );
 }
-
-export default Button;
