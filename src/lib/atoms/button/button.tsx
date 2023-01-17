@@ -1,14 +1,22 @@
-import styles from './button.module.scss';
-
 export type ButtonProps = {
-  label: string;
+  content: string | JSX.Element;
+  height?: string;
+  width?: string;
+  background?: string;
+  textColor?: string;
+  disabled?: true;
+  customClass?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-export function Button({ label, onClick }: ButtonProps): JSX.Element {
+export function Button({ content, height, width, background, textColor, disabled, customClass, onClick }: ButtonProps) {
   return (
-    <button type='button' onClick={onClick} className={`${styles.button} p-10 text-white rounded-md`}>
-      {label}
+    <button
+      onClick={onClick}
+      disabled={disabled || false}
+      className={`flex justify-center items-center ${!background && 'bg-gray-200'} ${customClass || ''}`}
+      style={{ height: height || '', width: width || '', background: background || '', color: textColor }}>
+      {content}
     </button>
   );
 }
