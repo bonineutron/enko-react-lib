@@ -5,17 +5,3 @@
 body {
   padding: 0 !important;
 }
-
-@font-face {
-  font-family: 'icomoon';
-  src: local('icomoon'), url('public/fonts/icomoon/icomoon.woff') format('woff'),
-    url('public/fonts/icomoon/icomoon.svg') format('svg');
-  font-weight: normal;
-  font-size: normal;
-  font-display: block;
-}
-
-.icon-simple-down-arrow:before {
-  content: '\e900';
-  font-family: 'icomoon';
-}

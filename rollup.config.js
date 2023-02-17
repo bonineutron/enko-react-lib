@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
+import image from '@rollup/plugin-image';
 import dts from 'rollup-plugin-dts';
 
 const packageJson = require('./package.json');
@@ -27,18 +28,20 @@ export default [
       commonjs(),
       resolve(),
       terser(),
+      image(),
       postcss({
         autoModules: true,
         config: {
           path: './postcss.config.js'
         }
       })
-    ]
+    ],
+    context: 'window'
   },
   {
     input: 'dist/src/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    external: [/\.css$/, /\.scss$/],
+    external: [/\.css$/, /\.scss$/, /\.png$/, /\.gif$/],
     plugins: [dts()]
   }
 ];

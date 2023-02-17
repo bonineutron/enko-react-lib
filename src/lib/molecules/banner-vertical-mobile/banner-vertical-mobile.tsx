@@ -1,4 +1,8 @@
 import { RegistrationButtons } from '../registration-buttons/registration-buttons';
+import { IoIosArrowDown } from 'react-icons/io';
+import tef from '../../../public/images/3.jpg';
+import tef2 from '../../../public/images/logo144.png';
+import tef3 from '../../../public/images/profile.jpeg';
 
 export type BannerVerticalMobileProps = {
   background: string;
@@ -35,6 +39,9 @@ export function BannerVerticalMobile({
       style={{ background: background }}>
       <div className='flex flex-col items-center lg:min-w-[30%]'>
         <img src={logo} alt='logo-banner' className='h-[60px] mb-10 lg:mb-5' />
+        <img src={tef} alt='logo-banner' className='h-[60px] mb-10 lg:mb-5' />
+        <img src={tef2} alt='logo-banner' className='h-[60px] mb-10 lg:mb-5' />
+        <img src={tef3} alt='logo-banner' className='h-[60px] mb-10 lg:mb-5' />
         <img src={image} alt='image-banner' className='w-[90%] max-w-[400px]' />
       </div>
       <div className='text-center text-white w-[90%] max-w-[500px] lg:min-w-[40%] lg:px-18'>
@@ -52,7 +59,7 @@ export function BannerVerticalMobile({
           darkBackground
         />
       </div>
-      <span className='icon-simple-down-arrow text-white text-[15px] lg:hidden'></span>
+      <IoIosArrowDown className='text-white text-[40px] lg:hidden' />
     </div>
   );
 }
