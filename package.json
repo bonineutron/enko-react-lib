@@ -1,6 +1,6 @@
 {
   "name": "enko-react-lib",
-  "version": "0.0.64-beta",
+  "version": "0.0.65-beta",
   "description": "react library to enko",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
